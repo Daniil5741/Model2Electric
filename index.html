@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Моделирование</title>
+    <style>
+        body {
+            display: inline;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        canvas {
+            display: inline;
+
+        }
+
+        #start_button {
+            margin: 10px;
+            border: 2px solid dodgerblue;
+            border-radius: 3px;
+            background-color: dodgerblue;
+        }
+
+
+        #buttons {
+            display: block;
+        }
+
+        #start_button:disabled,
+        #start_button[disabled] {
+            border: 1px solid #ecf0f1;
+            background-color: #95a5a6;
+            color: #7f8c8d;
+        }
+
+        #calc_button {
+            margin: 10px;
+            border: 2px solid chartreuse;
+            border-radius: 3px;
+            background-color: #5dff16;
+        }
+
+        #draw_button {
+            margin: 10px;
+            border: 2px solid #fbff00;
+            border-radius: 3px;
+            background-color: #fbff00;
+        }
+
+        input {
+            margin: 10px;
+            border: 1px solid antiquewhite;
+            border-radius: 3px;
+            display: block;
+        }
+
+        #edit_cheker {
+            margin-top: 5px;
+            border-color: aqua;
+
+        }
+
+        #button_and_inputs {
+            width: 200px;
+            height: 300px;
+            margin-top: 2%;
+            margin-left: 3%;
+            float: left;
+
+        }
+
+        #canvas {
+            margin-top: 1%;
+            margin-left: 1%;
+            float: left;
+            border: 1px solid #95a5a6;
+            position: relative;
+        }
+
+        p {
+            margin-left: 10px;
+            display: block;
+        }
+
+        #diagram {
+            margin-top: 1%;
+            margin-right: 5%;
+            float: right;
+        }
+
+
+        .canvasload {
+            display: inline-block;
+            padding: 7px 25px;
+            color: #fff;
+            font-weight: 300;
+            font-size: 64px;
+            background: #000;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) rotate(10deg) translateY(-50%);
+            border-radius: 10px;
+        }
+
+        #text_on_window.hide {
+            display: none;
+        }
+
+        .main {
+            position: relative;
+            height: 100%;
+        }
+
+        .my_name {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .graphic {
+            margin-top: 1%;
+            margin-left: 0%;
+
+            border: 1px solid #95a5a6;
+            position: relative;
+        }
+
+        .ans {
+            margin-top: 10px;
+            margin-left: 100px;
+
+
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <div id="canvas">
+        <canvas id="window" width="506" height="356">
+        </canvas>
+        <div class="canvasload hide" id="text_on_window">
+            Загрузка 🙈
+        </div>
+
+        <p class="ans">Напряженность в точке = <b id="ans_tension">0</b> мН/кл</p>
+
+        <p class="ans">Потенциал в точке = <b id="ans_potensial">0</b> мДж/кл</p>
+    </div>
+
+    <div id="button_and_inputs">
+        <p>Заряд 1 шара
+            <canvas id="canvas_left_charge" width="14" height="15"></canvas>
+            (Кл)
+        </p>
+        <input id="edit_charge_left" type="number">
+        <p>Заряд 2 шара
+            <canvas id="canvas_right_charge" width="14" height="15"></canvas>
+            (Кл)
+        </p>
+        <input id="edit_charge_right" type="number">
+        <p>Расстояние между ними (см)</p>
+        <input id="edit_distance" type="number">
+        <p>Координаты точки по X</p>
+        <input id="edit_pointX" type="number">
+        <p>Координаты точки по Y</p>
+        <input id="edit_pointY" type="number">
+
+        <div id="buttons">
+            <button style="height: 40px;width: 130px" id="start_button">Линии напряженности</button>
+            <button style="height: 40px;width: 140px" id="draw_button">Графики</button>
+            <button style="height: 40px;width: 170px" id="calc_button">Напряженность и потенциал в точке</button>
+
+
+        </div>
+
+    </div>
+
+    <div style="display:inline">
+        <canvas id="graphic_tension" class="graphic" width="506" height="306"></canvas>
+        <canvas id="graphic_potention" class="graphic" width="506" height="306"></canvas>
+
+    </div>
+
+
+</div>
+</div>
+
+<div class="my_name">
+    Все права защищены ©Daniil
+</div>
+<script
+        src="main.js"
+>
+
+
+</script>
+</body>
+</html>
