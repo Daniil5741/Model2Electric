@@ -1,3 +1,0 @@
-This is the third file, that I added to my project.
-
-This is the last file in the project right now.
