@@ -1224,7 +1224,4 @@ function draw_os_for_main_canvas() {
     main_Canvas.strokeText("300", 15, 46);
 }
 
-function search() {
-    alert("Work");
-}
 
